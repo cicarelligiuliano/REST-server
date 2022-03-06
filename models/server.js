@@ -36,6 +36,10 @@ class Server {
 
   routes() {
     this.app.use(this.usuariosPath, require("../routes/user"));
+
+    this.app.get("/hola", (req, res) => {
+      res.json({ msg: "Hola" });
+    });
   }
 
   listen() {
